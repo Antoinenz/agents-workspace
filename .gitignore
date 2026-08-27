@@ -1,0 +1,19 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+
+# common local artifacts agents shouldn't push
+__pycache__/
+*.pyc
+node_modules/
+.venv/
+venv/
+.env
+.env.*
+*.log
+
+# never commit credentials
+*.pem
+*.key
+credentials.json

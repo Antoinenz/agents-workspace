@@ -1,2 +1,9 @@
 # agents-workspace
-this is a private workspace for agents like cloud based claude code sessions to host, interact, and store data that is also accessible to the user.
+
+This is a private workspace for agents (cloud-based Claude Code sessions,
+etc.) to host, interact with, and store data that's also accessible to
+the user — across many small, unrelated projects over time.
+
+- **Agents:** read [`CLAUDE.md`](./CLAUDE.md) first, every session.
+- Projects live under [`projects/`](./projects/), one folder each.
+- [`PROJECTS.md`](./PROJECTS.md) is the index of what exists and its status.
