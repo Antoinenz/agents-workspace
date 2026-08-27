@@ -60,23 +60,34 @@ projects/<slug>/
   `garden-irrigation-plan`. Prefix with the creation date if the name
   alone could plausibly collide with a future unrelated project.
 - Copy `projects/_TEMPLATE/` as a starting point.
-- Add a row for it to `PROJECTS.md` immediately (see §5).
+- Add a row for it to `PROJECTS.md` immediately (see §7).
 - Commit and push the new (mostly empty) folder right away, *before*
   asking the user to hand over resources — that way the folder exists
   remotely for them to drop files into / for the user's own tooling to see.
 
-## 4. Working inside a project
+## 4. Shared resources (`resources/`)
+
+Separate from any one project: `resources/` at the repo root holds
+reference material useful across projects — style guides, checklists,
+reusable templates. See `resources/README.md` for what's there. Check it
+when it's plausibly relevant (e.g. writing prose meant to sound like the
+user, not an AI) — it's a "consult when it makes sense" shelf, not a
+mandatory checklist, and it grows over time as things get added.
+
+## 5. Working inside a project
 
 - Stay inside your project's own folder. Don't edit files under another
   project's `projects/<slug>/` unless the user explicitly asks you to
   cross-reference or move something.
 - Put anything the user hands you, or that you fetch from the web/APIs/
   other tools, under that project's `resources/` (their inputs) or
-  `output/` (your outputs) — don't scatter files at the repo root.
+  `output/` (your outputs) — don't scatter files at the repo root. The
+  one exception is genuinely cross-project reference material, which
+  belongs in the shared `resources/` from §4 instead.
 - Keep secrets, API keys, and credentials out of the repo entirely, even
   inside a project folder. This workspace is synced and persistent.
 
-## 5. Progress log format (`PROGRESS.md`)
+## 6. Progress log format (`PROGRESS.md`)
 
 Append, don't rewrite history. Newest entry on top. Each entry:
 
@@ -93,7 +104,7 @@ Keep `README.md` for the stable description of the project; keep
 able to read just the top entry of `PROGRESS.md` and know exactly where
 things stand.
 
-## 6. `PROJECTS.md` registry
+## 7. `PROJECTS.md` registry
 
 One row per project, kept current. Update it whenever you create a
 project or change its status:
@@ -104,7 +115,7 @@ project or change its status:
 
 Status values: `active`, `blocked`, `done`, `paused`.
 
-## 7. Ending a turn — commit and push
+## 8. Ending a turn — commit and push
 
 If you changed, fetched, or generated anything, commit and push before
 ending your turn. Don't leave work sitting only in the local working
@@ -127,7 +138,7 @@ git push
 - It's fine (expected) to commit and push multiple times within a single
   turn if it's a long one — don't hoard uncommitted work.
 
-## 8. Ground rules
+## 9. Ground rules
 
 - No separate workspaces/worktrees/branches per project — folder
   isolation only. This keeps `git pull`/`push` simple for every agent.
