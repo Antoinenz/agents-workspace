@@ -11,6 +11,10 @@ Skim what's available when it's plausibly relevant, and use your
 judgment about what actually applies — nothing here is a mandatory
 checklist to run through on every task.
 
+- **`about-you.md`** — standing facts and preferences that apply across
+  every project (tone, units, timezone, standing instructions). Worth a
+  read early in any session; keep it updated when you learn something
+  durable and reusable.
 - **`writing/signs-of-ai-writing.md`** — a field guide of tics typical of
   AI-generated text (puffed-up "significance and legacy" framing, rule-of-
   three lists, empty transitions like "it's not just X, it's Y",

@@ -1,0 +1,44 @@
+name: checks
+
+# Every agent pushes straight to main with no review (see CLAUDE.md), so
+# this is a post-hoc safety net rather than a gate: it flags problems
+# after the fact rather than blocking the push.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  secret-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Scan for committed secrets
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # Note: gitleaks-action's free tier is for individual accounts;
+        # if this repo ever moves under a GitHub Organization, it'll ask
+        # for a GITLEAKS_LICENSE secret — see https://github.com/gitleaks/gitleaks-action
+
+  registry-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Every projects/ folder must have a PROJECTS.md row
+        run: |
+          missing=0
+          for d in projects/*/; do
+            slug="$(basename "$d")"
+            [ "$slug" = "_TEMPLATE" ] && continue
+            if ! grep -qF "| $slug |" PROJECTS.md; then
+              echo "::error file=PROJECTS.md::projects/$slug has no row in PROJECTS.md (see CLAUDE.md §7)"
+              missing=1
+            fi
+          done
+          exit "$missing"

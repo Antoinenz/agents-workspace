@@ -14,7 +14,7 @@ Read this whole file before doing anything else in this repo.
 Before reading or writing anything else:
 
 ```
-git pull --rebase --autostash
+scripts/sync.sh   # or: git pull --rebase --autostash
 ```
 
 Do this even if you think the tree is clean — other agents (or the user,
@@ -29,6 +29,10 @@ they'd like help with today. While you do that (or right after), read
 `PROJECTS.md` to see what's already in flight so you can offer it back to
 them, e.g. "you've got 'q3-budget-model' in progress, last touched 3 days
 ago, still on that or something new?"
+
+It's also worth a quick read of `resources/about-you.md` early on — it
+holds standing preferences/facts that apply across every project, so you
+don't re-ask things a previous session already learned.
 
 Only create a new project folder once you know what the task actually is.
 Never create a placeholder/empty project "just in case."
@@ -49,6 +53,14 @@ never duplicate work another agent already started.
 ## 3. Creating a new project
 
 ```
+scripts/new-project.sh <slug> ["one-line summary"]
+```
+
+This copies `projects/_TEMPLATE/`, stamps `README.md`/`PROGRESS.md`,
+adds a row to `PROJECTS.md`, and commits + pushes it — all in one step,
+so it can't be done inconsistently. Result:
+
+```
 projects/<slug>/
   README.md      # what this project is / goal / any constraints
   PROGRESS.md    # dated log — see format below
@@ -59,11 +71,11 @@ projects/<slug>/
 - `<slug>` is short kebab-case, e.g. `2026-08-27-tax-return` or
   `garden-irrigation-plan`. Prefix with the creation date if the name
   alone could plausibly collide with a future unrelated project.
-- Copy `projects/_TEMPLATE/` as a starting point.
-- Add a row for it to `PROJECTS.md` immediately (see §7).
-- Commit and push the new (mostly empty) folder right away, *before*
-  asking the user to hand over resources — that way the folder exists
-  remotely for them to drop files into / for the user's own tooling to see.
+- Push happens *before* asking the user to hand over resources — that
+  way the folder exists remotely for them to drop files into.
+- If you can't run the script for some reason, do the same steps
+  manually: copy `projects/_TEMPLATE/`, fill in `README.md`/
+  `PROGRESS.md`, add a row to `PROJECTS.md` (see §7), commit, push.
 
 ## 4. Shared resources (`resources/`)
 
@@ -147,3 +159,8 @@ git push
 - Prefer small, frequent commits over one giant commit at the end.
 - If `git push` is rejected, `git pull --rebase --autostash` and retry —
   don't overwrite remote history.
+- A GitHub Action (`.github/workflows/checks.yml`) scans every push for
+  committed secrets and checks that every `projects/` folder has a
+  `PROJECTS.md` row. It runs *after* the push (there's no review gate
+  here), so treat a failure as "go fix this now," not as something that
+  blocked anything.

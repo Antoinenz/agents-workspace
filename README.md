@@ -7,3 +7,7 @@ the user — across many small, unrelated projects over time.
 - **Agents:** read [`CLAUDE.md`](./CLAUDE.md) first, every session.
 - Projects live under [`projects/`](./projects/), one folder each.
 - [`PROJECTS.md`](./PROJECTS.md) is the index of what exists and its status.
+- [`resources/`](./resources/) holds reference material shared across
+  all projects (writing style, standing facts/preferences about the user).
+- [`scripts/`](./scripts/) has `sync.sh` and `new-project.sh` so syncing
+  and creating a project are one command each.
