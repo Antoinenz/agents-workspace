@@ -12,14 +12,22 @@ factual, and things you'd be fine with any future agent reading.
 
 ## Contact / identity
 
+- Name: _not set_
 - Email: _not set_ — for authorship/attribution only if you add one.
   Never send anything to it, or anywhere else, unless explicitly asked.
+- Country: _not set_
 
 ## Conventions
 
+- Dates: _not set_
 - Units: _not set — metric or imperial?_
 - Timezone: _not set_
 - Currency: _not set_
+
+## Personal touches
+
+- Favourite colour: _not set_ — handy context for anything generated
+  with a color choice (charts, themes, artwork), not just trivia.
 
 ## Writing / tone preferences
 

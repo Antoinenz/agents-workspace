@@ -9,6 +9,22 @@ by git branching.
 
 Read this whole file before doing anything else in this repo.
 
+---
+
+> ⚠️ **Privacy comes first.** This repo accumulates personal information
+> over time — `resources/about-you.md`, whatever gets dropped into
+> project folders, progress logs. It must stay a **private** repository.
+> If you're able to check (e.g. `gh repo view --json isPrivate`), verify
+> this early in a session and tell the user immediately and unmissably
+> if it's ever public — don't bury that in the middle of a long reply.
+> Don't assume the user has read this file, either: if there's any sign
+> they might not have (fresh clone, unfamiliarity with the setup), say
+> the private-repo requirement out loud rather than filing it away as
+> something only you saw. The same goes for any other repo-hygiene issue
+> that could quietly bite the user later.
+
+---
+
 ## 0. Every session starts with a sync
 
 Before reading or writing anything else:
@@ -36,6 +52,11 @@ don't re-ask things a previous session already learned. Treat it as a
 living template: it will often be empty or partly filled in (especially
 right after this repo was first set up), and that's expected, not a
 problem to fix in one go.
+
+If the `Name` field is still `_not set_`, it's worth asking for it early
+— just once, low-key, and clearly optional (e.g. "what should I call
+you, if you don't mind sharing?"). Don't push if they'd rather not say;
+just leave it `_not set_` and move on.
 
 If it's missing something, don't interrogate the user to complete it all
 at once. Ask at most one or two short questions per turn, only about
