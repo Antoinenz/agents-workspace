@@ -5,7 +5,8 @@
 > (see the source page's history for author attribution). This is a Wikipedia
 > internal essay written to help editors spot undisclosed AI-generated content;
 > it's descriptive, not prescriptive — read §1 of `resources/README.md` for how
-> to use it here.
+> to use it here. This file is the one exception to the repo's overall
+> [MIT license](../../LICENSE) — see there for details.
 
 ---
 

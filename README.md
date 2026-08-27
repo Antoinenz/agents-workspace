@@ -17,3 +17,6 @@ the user — across many small, unrelated projects over time.
   all projects (writing style, standing facts/preferences about the user).
 - [`scripts/`](./scripts/) has `sync.sh` and `new-project.sh` so syncing
   and creating a project are one command each.
+- Licensed under [MIT](./LICENSE), except
+  `resources/writing/signs-of-ai-writing.md`, which carries its own
+  CC BY-SA 4.0 attribution (see that file's header).
