@@ -12,12 +12,11 @@ factual, and things you'd be fine with any future agent reading.
 
 ## Contact / identity
 
-- Email: antoinenzrossi@gmail.com — for authorship/attribution only.
+- Email: _not set_ — for authorship/attribution only if you add one.
   Never send anything to it, or anywhere else, unless explicitly asked.
 
 ## Conventions
 
-- Dates: YYYY-MM-DD
 - Units: _not set — metric or imperial?_
 - Timezone: _not set_
 - Currency: _not set_

@@ -32,7 +32,23 @@ ago, still on that or something new?"
 
 It's also worth a quick read of `resources/about-you.md` early on — it
 holds standing preferences/facts that apply across every project, so you
-don't re-ask things a previous session already learned.
+don't re-ask things a previous session already learned. Treat it as a
+living template: it will often be empty or partly filled in (especially
+right after this repo was first set up), and that's expected, not a
+problem to fix in one go.
+
+If it's missing something, don't interrogate the user to complete it all
+at once. Ask at most one or two short questions per turn, only about
+whatever's actually relevant to what you're doing right now (e.g. ask
+about writing tone when you're about to draft something for them, not on
+an unrelated coding task). Skip it entirely if nothing in the current
+task touches a gap. If you have a structured choice tool available (e.g.
+Claude Code's option-picker), prefer it over open-ended free text —
+answering "pick one of these" is less effort than composing a reply.
+Whatever the user tells you, write it into `about-you.md` yourself,
+replacing the placeholder, and commit it along with your other changes —
+don't just hold it in-session. Never guess or infer an answer to fill a
+gap yourself; leave it as `_not set_` until the user actually says.
 
 Only create a new project folder once you know what the task actually is.
 Never create a placeholder/empty project "just in case."
